@@ -1,0 +1,66 @@
+import Image from "next/image";
+import { AtSign, Globe, MapPin, Share2 } from "lucide-react";
+import { Container } from "@/components/ui/Container";
+import { GYM_ADDRESS, SOCIAL_LINKS } from "@/lib/constants";
+
+export function Footer() {
+  return (
+    <footer id="contatti" className="relative border-t border-white/5 bg-background-surface/40 py-16">
+      <Container className="flex flex-col gap-10 md:flex-row md:justify-between">
+        <div className="flex flex-col gap-3">
+          <div className="group flex items-center gap-2">
+            <Image
+              src="/logo.png"
+              alt="Team Salim"
+              width={32}
+              height={32}
+              className="transition-transform duration-300 group-hover:scale-110"
+            />
+            <span className="font-heading text-lg tracking-wide text-foreground">
+              TEAM SALIM
+            </span>
+          </div>
+          <p className="flex items-start gap-2 text-sm text-foreground-muted">
+            <MapPin size={16} className="mt-0.5 shrink-0 text-accent-glow" />
+            {GYM_ADDRESS}
+          </p>
+        </div>
+
+        <div className="flex flex-col gap-3">
+          <span className="text-xs font-semibold uppercase tracking-wide text-foreground-muted">
+            Seguici
+          </span>
+          <div className="flex items-center gap-4">
+            <a
+              href={SOCIAL_LINKS.instagram}
+              className="text-foreground-muted transition-all duration-300 hover:scale-110 hover:text-accent-glow"
+              aria-label="Instagram"
+            >
+              <AtSign size={20} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.facebook}
+              className="text-foreground-muted transition-all duration-300 hover:scale-110 hover:text-accent-glow"
+              aria-label="Facebook"
+            >
+              <Globe size={20} />
+            </a>
+            <a
+              href={SOCIAL_LINKS.tiktok}
+              className="text-foreground-muted transition-all duration-300 hover:scale-110 hover:text-accent-glow"
+              aria-label="TikTok"
+            >
+              <Share2 size={20} />
+            </a>
+          </div>
+        </div>
+      </Container>
+
+      <Container className="mt-10 border-t border-white/5 pt-6">
+        <p className="text-center text-xs text-foreground-muted">
+          © {new Date().getFullYear()} Team Salim. Tutti i diritti riservati.
+        </p>
+      </Container>
+    </footer>
+  );
+}

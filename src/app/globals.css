@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050608;
+  --background-surface: #0d1117;
+  --background-elevated: #151a21;
+  --accent: #1e5aff;
+  --accent-dark: #0b2e8a;
+  --accent-glow: #3b82ff;
+  --accent-cobalt: #123a9e;
+  --accent-ice: #8fb8ff;
+  --accent-cyan: #2dd4ff;
+  --foreground: #f5f6f7;
+  --foreground-muted: #9aa3af;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-surface: var(--background-surface);
+  --color-background-elevated: var(--background-elevated);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-accent-glow: var(--accent-glow);
+  --color-accent-cobalt: var(--accent-cobalt);
+  --color-accent-ice: var(--accent-ice);
+  --color-accent-cyan: var(--accent-cyan);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --font-heading: var(--font-anton);
+  --font-body: var(--font-inter);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  position: relative;
+}
+
+/* Subtle film-grain texture over the whole page instead of a flat background.
+   will-change/translateZ force this fixed, blend-mode layer onto its own GPU
+   compositor layer up front, so it doesn't get re-flattened with the rest of
+   the page (and repainted) on every scroll frame. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: overlay;
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
