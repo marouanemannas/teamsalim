@@ -6,8 +6,7 @@ import { Container } from "@/components/ui/Container";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductArt } from "@/components/ui/ProductArt";
-import { WHATSAPP_NUMBER } from "@/lib/constants";
-import { buildWhatsAppLink } from "@/lib/whatsapp";
+import { WHATSAPP_LINK } from "@/lib/constants";
 import { useParallax } from "@/lib/hooks/useParallax";
 
 export function Shop() {
@@ -34,10 +33,7 @@ export function Shop() {
           {products.map((product, index) => (
             <SectionReveal key={product.id} delay={index * 100}>
               <a
-                href={buildWhatsAppLink(
-                  WHATSAPP_NUMBER,
-                  `Ciao! Sono interessato al prodotto "${product.name}". È disponibile?`,
-                )}
+                href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group block"

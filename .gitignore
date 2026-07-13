@@ -39,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# public/nottebianca contiene ~690 foto grezze dell'evento; il sito ne
+# referenzia solo alcune (vedi src/lib/nottebianca.ts) — versioniamo solo
+# quelle, non l'intero export.
+public/nottebianca/*
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.48.40.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.48.41.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.48.44 (2).jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.48.47 (1).jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.48.49.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.50.45.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.51.07.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.51.15 (1).jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.51.21.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.51.28.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.51.35.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.53.51.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.54.11 (1).jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 12.54.16 (1).jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 13.14.44.jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 22.08.27 (1).jpeg
+!public/nottebianca/WhatsApp Image 2026-06-25 at 22.10.13.jpeg

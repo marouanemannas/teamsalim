@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Inter } from "next/font/google";
+import { FloatingWhatsAppButton } from "@/components/ui/FloatingWhatsAppButton";
 import "./globals.css";
 
 const anton = Anton({
@@ -30,6 +31,7 @@ export default function RootLayout({
     <html lang="it" className={`${anton.variable} ${inter.variable} h-full`}>
       <body className="min-h-full bg-background font-body text-foreground antialiased">
         {children}
+        <FloatingWhatsAppButton />
       </body>
     </html>
   );

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { AtSign, Globe, MapPin, Share2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { GYM_ADDRESS, SOCIAL_LINKS } from "@/lib/constants";
+import { GOOGLE_MAPS_LINK, GYM_ADDRESS, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
   return (
@@ -20,10 +20,17 @@ export function Footer() {
               TEAM SALIM
             </span>
           </div>
-          <p className="flex items-start gap-2 text-sm text-foreground-muted">
+          <a
+            href={GOOGLE_MAPS_LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group flex items-start gap-2 text-sm text-foreground-muted transition-colors duration-300 hover:text-accent-glow"
+          >
             <MapPin size={16} className="mt-0.5 shrink-0 text-accent-glow" />
-            {GYM_ADDRESS}
-          </p>
+            <span className="underline decoration-transparent underline-offset-4 transition-colors duration-300 group-hover:decoration-accent-glow">
+              {GYM_ADDRESS}
+            </span>
+          </a>
         </div>
 
         <div className="flex flex-col gap-3">

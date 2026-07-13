@@ -26,11 +26,11 @@ Nessuna pagina separata, eccetto la futura area admin.
 
 1. **Hero**: logo, nome palestra, discipline, call to action, immagine/sfondo placeholder.
 2. **Chi siamo / Discipline**: breve presentazione palestra + le 4 discipline con icone o immagini placeholder.
-3. **Pacchetti**: card pacchetti (placeholder tipo "Pacchetto Base", "Pacchetto Pro", "Pacchetto Elite" con prezzo/dettagli placeholder). Ogni card ha un bottone che apre WhatsApp (`wa.me`) con messaggio precompilato che menziona il pacchetto scelto. Numero placeholder: `+390000000000` (da sostituire in seguito).
+3. **Attività**: card per ogni attività della palestra (MMA, Muay Thai, K-1, Kickboxing, Corsi Donne, Corsi Bambini, Personal Training, Allenamenti di gruppo). Ogni card ha un bottone che porta al link WhatsApp fisso della palestra: `https://api.whatsapp.com/send?text=https%3A%2F%2Fmaps.app.goo.gl%2FCky3GMeDyK7uJ9e96` (stesso link ovunque, nessun messaggio precompilato per attività).
 4. **Eventi**: card con prossimi eventi (data, titolo, breve descrizione). Popolare con 2-3 eventi di esempio, ma strutturare i dati pensando a una futura integrazione con **Supabase** (non hardcodare in modo permanente, tenere i dati separati/tipizzati).
 5. **Abbigliamento**: griglia prodotti (magliette, pantaloncini, ecc.) con placeholder. Click su un prodotto apre WhatsApp con messaggio precompilato che menziona il prodotto. Nessun carrello, nessun pagamento online.
 6. **Newsletter**: form con campo email per iscriversi. Per ora solo UI, senza connessione reale a un servizio esterno.
-7. **Footer**: contatti, social placeholder, indirizzo palestra placeholder (Vergato, Bologna).
+7. **Footer**: contatti, social placeholder, indirizzo reale della palestra: Via Guglielmo Marconi 3, 40038 Vergato (BO), cliccabile verso Google Maps (`https://maps.app.goo.gl/Cky3GMeDyK7uJ9e96`).
 
 ## Vincoli importanti per questo step
 - **Non implementare** ancora autenticazione utenti, e-commerce reale, o backend Supabase: solo UI/frontend completa con dati placeholder ben strutturati, pronti per essere collegati a un database in seguito.

@@ -7,7 +7,7 @@ export interface Stat {
 }
 
 export const stats: Stat[] = [
-  { id: "anni", value: 10, suffix: "+", label: "Anni di attività" },
-  { id: "atleti", value: 250, suffix: "+", label: "Atleti tesserati" },
-  { id: "discipline", value: 4, label: "Discipline insegnate" },
+  { id: "anni", value: 40, suffix: "+", label: "Anni di storia" },
+  { id: "atleti", value: 350, suffix: "+", label: "Atleti tesserati" },
+  { id: "discipline", value: 4, suffix: "+", label: "Discipline insegnate" },
 ];

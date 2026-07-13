@@ -1,36 +1,36 @@
-import { MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "@/lib/constants";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 
-interface WhatsAppButtonProps {
+interface LinkButtonProps {
+  href: string;
   label: string;
   className?: string;
   variant?: "solid" | "outline";
 }
 
-const VARIANT_STYLES: Record<NonNullable<WhatsAppButtonProps["variant"]>, string> = {
+const VARIANT_STYLES: Record<NonNullable<LinkButtonProps["variant"]>, string> = {
   solid:
     "bg-accent text-foreground hover:bg-accent-glow hover:shadow-[0_0_30px_rgba(59,130,255,0.35)]",
   outline:
     "border border-accent/50 text-foreground hover:border-accent hover:bg-accent/10",
 };
 
-export function WhatsAppButton({
+export function LinkButton({
+  href,
   label,
   className = "",
-  variant = "solid",
-}: WhatsAppButtonProps) {
+  variant = "outline",
+}: LinkButtonProps) {
   return (
-    <a
-      href={WHATSAPP_LINK}
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href={href}
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-body text-sm font-semibold transition-all duration-300 hover:scale-[1.02] ${VARIANT_STYLES[variant]} ${className}`}
     >
       <span>{label}</span>
-      <MessageCircle
+      <ArrowUpRight
         size={18}
-        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:scale-110"
+        className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
       />
-    </a>
+    </Link>
   );
 }
