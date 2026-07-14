@@ -30,7 +30,7 @@ export function About() {
             title="Discipline"
             ghost="04"
             align="left"
-            description="Dal 1995, il metodo di Salim si allena su quattro discipline. Accogliamo atleti di ogni livello, dal principiante all'agonista, con lo stesso approccio serio e tecnico che ha reso Team Salim un nome che vince in Italia e nel mondo."
+            description="Con oltre 40 anni di esperienza nelle arti marziali, il metodo di Salim si allena su quattro discipline. Accogliamo atleti di ogni livello, dal principiante all'agonista, con lo stesso approccio serio e tecnico che ha reso Team Salim un nome che vince in Italia e nel mondo."
           />
         </SectionReveal>
 

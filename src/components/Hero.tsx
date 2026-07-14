@@ -45,7 +45,7 @@ export function Hero() {
               }`}
               style={{ transitionDelay: "100ms" }}
             >
-              Dal 1995 · Vergato, Bologna
+              Dal 2023 · Vergato, Bologna
             </p>
 
             <div className="relative mt-3">
@@ -89,7 +89,7 @@ export function Hero() {
               }`}
               style={{ transitionDelay: "380ms" }}
             >
-              Dal 1995, la palestra di arti marziali di Vergato. MMA, Muay
+              Dal 2023, la palestra di arti marziali di Vergato. MMA, Muay
               Thai, K-1 e Kickboxing, con lo stesso motto da sempre: dare il
               massimo.
             </p>

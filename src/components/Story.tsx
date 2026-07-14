@@ -23,7 +23,7 @@ export function Story() {
           <SectionHeading
             eyebrow="La nostra storia"
             title="Il Maestro"
-            ghost="95"
+            ghost="23"
             align="left"
           />
         </SectionReveal>
@@ -46,12 +46,14 @@ export function Story() {
             <SectionReveal delay={140}>
               <p className="text-lg text-foreground-muted sm:text-xl">
                 <span className="font-semibold text-foreground">
-                  Team Salim nasce nel 1995 a Vergato
+                  Con oltre 40 anni di esperienza nelle arti marziali
                 </span>
-                , quando allenarsi seriamente nelle arti marziali, qui in
-                Appennino, non era nemmeno un&apos;opzione. Hafid Salim ha
-                colmato un vuoto che la gente non sapeva di avere, portando in
-                paese uno sport che prima non esisteva.
+                , Hafid Salim ha dedicato la vita all&apos;insegnamento e alla
+                competizione. Prima di Team Salim, ha gestito per circa dieci
+                anni una palestra a Porretta Terme, formando atleti e
+                appassionati della zona. Nel 2023 nasce Team Salim a Vergato,
+                dove oggi porta la stessa dedizione ed esperienza a una nuova
+                generazione di atleti.
               </p>
             </SectionReveal>
 
@@ -67,8 +69,8 @@ export function Story() {
 
             <SectionReveal delay={260}>
               <p className="text-foreground-muted">
-                Oggi, dopo oltre quarant&apos;anni, è ancora il primo ad
-                arrivare e l&apos;ultimo a uscire dalla palestra. Segue ogni
+                Oggi, è ancora il primo ad arrivare e l&apos;ultimo a uscire
+                dalla palestra. Segue ogni
                 allenamento, tiene lezioni
                 private, ed è affiancato da un team di istruttori che portano
                 avanti il suo metodo — ma resta sempre lui a guidare la
