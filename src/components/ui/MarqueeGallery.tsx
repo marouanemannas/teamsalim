@@ -71,6 +71,10 @@ export function MarqueeGallery({ items, className = "" }: MarqueeGalleryProps) {
   }
 
   function handlePointerDown(e: React.PointerEvent<HTMLDivElement>) {
+    // Drag manuale solo per mouse: su touch/penna lasciamo che il tocco
+    // scorra la pagina normalmente (nessun setPointerCapture, nessuna pausa
+    // dell'auto-scroll), invece di intercettarlo per il trascinamento.
+    if (e.pointerType !== "mouse") return;
     draggingRef.current = true;
     pausedRef.current = true;
     if (resumeTimeoutRef.current) clearTimeout(resumeTimeoutRef.current);
@@ -79,6 +83,7 @@ export function MarqueeGallery({ items, className = "" }: MarqueeGalleryProps) {
   }
 
   function handlePointerMove(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType !== "mouse") return;
     if (!draggingRef.current || !trackRef.current) return;
     const dx = e.clientX - dragStartRef.current.x;
     offsetRef.current = dragStartRef.current.offset + dx;
@@ -87,6 +92,7 @@ export function MarqueeGallery({ items, className = "" }: MarqueeGalleryProps) {
   }
 
   function endDrag(e: React.PointerEvent<HTMLDivElement>) {
+    if (e.pointerType !== "mouse") return;
     if (!draggingRef.current) return;
     draggingRef.current = false;
     if (e.currentTarget.hasPointerCapture(e.pointerId)) {
@@ -101,7 +107,6 @@ export function MarqueeGallery({ items, className = "" }: MarqueeGalleryProps) {
   return (
     <div
       className={`relative w-full select-none overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] [-webkit-mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] ${className}`}
-      style={{ touchAction: "pan-y" }}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
       onPointerUp={endDrag}
