@@ -6,15 +6,40 @@ import { Container } from "@/components/ui/Container";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
-// TODO: integrare con un servizio newsletter reale (es. Supabase, Resend, Mailchimp).
+type Status = "idle" | "loading" | "success" | "error";
+
 export function Newsletter() {
   const [email, setEmail] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<Status>("idle");
+  const [message, setMessage] = useState<string | null>(null);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitted(true);
-    setEmail("");
+    setStatus("loading");
+    setMessage(null);
+
+    try {
+      const response = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setStatus("error");
+        setMessage(data?.error ?? "Errore durante l'iscrizione. Riprova più tardi.");
+        return;
+      }
+
+      setStatus("success");
+      setMessage(data?.message ?? "Iscrizione avvenuta! Grazie.");
+      setEmail("");
+    } catch {
+      setStatus("error");
+      setMessage("Errore di rete. Controlla la connessione e riprova.");
+    }
   }
 
   return (
@@ -44,13 +69,15 @@ export function Newsletter() {
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="La tua email"
-              className="w-full flex-1 rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm text-foreground placeholder:text-foreground-muted focus:border-accent focus:outline-none"
+              disabled={status === "loading"}
+              className="w-full flex-1 rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm text-foreground placeholder:text-foreground-muted focus:border-accent focus:outline-none disabled:opacity-60"
             />
             <button
               type="submit"
-              className="group inline-flex items-center justify-center gap-2 rounded-full border border-accent px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-accent"
+              disabled={status === "loading"}
+              className="group inline-flex items-center justify-center gap-2 rounded-full border border-accent px-6 py-3 text-sm font-semibold text-foreground transition-all duration-300 hover:bg-accent disabled:cursor-not-allowed disabled:opacity-60"
             >
-              Iscriviti
+              {status === "loading" ? "Invio..." : "Iscriviti"}
               <Send
                 size={16}
                 className="transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1"
@@ -58,10 +85,11 @@ export function Newsletter() {
             </button>
           </form>
 
-          {submitted && (
-            <p className="mt-4 text-sm text-accent-glow">
-              Grazie per l&apos;iscrizione!
-            </p>
+          {status === "success" && message && (
+            <p className="mt-4 text-sm text-accent-glow">{message}</p>
+          )}
+          {status === "error" && message && (
+            <p className="mt-4 text-sm text-red-400">{message}</p>
           )}
         </SectionReveal>
       </Container>
