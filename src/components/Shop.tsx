@@ -1,12 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { products } from "@/data/products";
 import { Container } from "@/components/ui/Container";
 import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ProductArt } from "@/components/ui/ProductArt";
-import { WHATSAPP_LINK } from "@/lib/constants";
 import { useParallax } from "@/lib/hooks/useParallax";
 
 export function Shop() {
@@ -32,12 +32,7 @@ export function Shop() {
         <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-12 sm:grid-cols-2">
           {products.map((product, index) => (
             <SectionReveal key={product.id} delay={index * 100}>
-              <a
-                href={WHATSAPP_LINK}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
+              <Link href={`/abbigliamento/${product.id}`} className="group block">
                 <ProductArt product={product} index={index} />
                 <div className="mt-4 flex items-start justify-between gap-4">
                   <div>
@@ -56,7 +51,7 @@ export function Shop() {
                     />
                   </span>
                 </div>
-              </a>
+              </Link>
             </SectionReveal>
           ))}
         </div>

@@ -1,10 +1,11 @@
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "@/lib/constants";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 interface WhatsAppButtonProps {
   label: string;
   className?: string;
   variant?: "solid" | "outline";
+  message?: string;
 }
 
 const VARIANT_STYLES: Record<NonNullable<WhatsAppButtonProps["variant"]>, string> = {
@@ -18,10 +19,11 @@ export function WhatsAppButton({
   label,
   className = "",
   variant = "solid",
+  message,
 }: WhatsAppButtonProps) {
   return (
     <a
-      href={WHATSAPP_LINK}
+      href={getWhatsAppLink(message)}
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-body text-sm font-semibold transition-all duration-300 hover:scale-[1.02] ${VARIANT_STYLES[variant]} ${className}`}

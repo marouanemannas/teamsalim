@@ -1,10 +1,10 @@
 import { MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "@/lib/constants";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 export function FloatingWhatsAppButton() {
   return (
     <a
-      href={WHATSAPP_LINK}
+      href={getWhatsAppLink()}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Scrivici su WhatsApp"
