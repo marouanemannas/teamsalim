@@ -15,6 +15,10 @@ interface DisciplinePageContent {
   /** Se false, la pagina non mostra la galleria placeholder. Default: true. */
   gallery?: boolean;
   image?: string;
+  /** Numero WhatsApp dedicato, se diverso dal numero generico della palestra. */
+  whatsappNumber?: string;
+  /** Messaggio WhatsApp precompilato dedicato, se diverso da quello generico per disciplina. */
+  whatsappMessage?: string;
 }
 
 interface DisciplinePageProps {
@@ -112,7 +116,11 @@ export function DisciplinePage({ discipline }: DisciplinePageProps) {
               <WhatsAppButton
                 className="mt-8"
                 label="Mettiti in contatto con il team"
-                message={getDisciplineWhatsAppMessage(discipline.name)}
+                message={
+                  discipline.whatsappMessage ??
+                  getDisciplineWhatsAppMessage(discipline.name)
+                }
+                number={discipline.whatsappNumber}
               />
             </SectionReveal>
           </Container>

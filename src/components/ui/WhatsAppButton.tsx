@@ -6,6 +6,7 @@ interface WhatsAppButtonProps {
   className?: string;
   variant?: "solid" | "outline";
   message?: string;
+  number?: string;
 }
 
 const VARIANT_STYLES: Record<NonNullable<WhatsAppButtonProps["variant"]>, string> = {
@@ -20,10 +21,11 @@ export function WhatsAppButton({
   className = "",
   variant = "solid",
   message,
+  number,
 }: WhatsAppButtonProps) {
   return (
     <a
-      href={getWhatsAppLink(message)}
+      href={getWhatsAppLink(message, number)}
       target="_blank"
       rel="noopener noreferrer"
       className={`group inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 font-body text-sm font-semibold transition-all duration-300 hover:scale-[1.02] ${VARIANT_STYLES[variant]} ${className}`}

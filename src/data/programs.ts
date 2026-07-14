@@ -9,6 +9,10 @@ export interface Program {
   /** Se false, la pagina dedicata non mostra la galleria placeholder. */
   gallery: boolean;
   image?: string;
+  /** Numero WhatsApp dedicato, se diverso dal numero generico della palestra. */
+  whatsappNumber?: string;
+  /** Messaggio WhatsApp precompilato dedicato, se diverso da quello generico per disciplina. */
+  whatsappMessage?: string;
 }
 
 export const programs: Program[] = [
@@ -22,6 +26,9 @@ export const programs: Program[] = [
     ],
     href: "/corsi-donne",
     gallery: false,
+    whatsappNumber: "393516230628",
+    whatsappMessage:
+      "Vuoi provare il corso donne? Scrivi ad Aya, ti darà tutte le informazioni per iniziare.",
   },
   {
     id: "corsi-bambini",
