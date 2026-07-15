@@ -39,6 +39,21 @@ export function InstagramIcon({ size = 20, className }: IconProps) {
   );
 }
 
+export function TikTokIcon({ size = 20, className }: IconProps) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M16.6 2h-3.2v13.2c0 1.5-1.2 2.7-2.7 2.7-1.5 0-2.7-1.2-2.7-2.7 0-1.5 1.2-2.7 2.7-2.7.3 0 .55.04.8.12v-3.25a5.9 5.9 0 0 0-.8-.05A5.95 5.95 0 0 0 4.8 15.2a5.95 5.95 0 0 0 5.9 5.95 5.95 5.95 0 0 0 5.9-5.95V8.4a7.6 7.6 0 0 0 4.4 1.4V6.6a4.35 4.35 0 0 1-4.4-4.6Z" />
+    </svg>
+  );
+}
+
 export function WhatsAppIcon({ size = 20, className }: IconProps) {
   return (
     <svg
