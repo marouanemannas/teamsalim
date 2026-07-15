@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { AtSign, Globe, MapPin, Share2 } from "lucide-react";
+import { MapPin, Share2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
+import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
 import { GOOGLE_MAPS_LINK, GYM_ADDRESS, SOCIAL_LINKS } from "@/lib/constants";
 
 export function Footer() {
@@ -40,17 +41,21 @@ export function Footer() {
           <div className="flex items-center gap-4">
             <a
               href={SOCIAL_LINKS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-foreground-muted transition-all duration-300 hover:scale-110 hover:text-accent-glow"
               aria-label="Instagram"
             >
-              <AtSign size={20} />
+              <InstagramIcon size={20} />
             </a>
             <a
               href={SOCIAL_LINKS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
               className="text-foreground-muted transition-all duration-300 hover:scale-110 hover:text-accent-glow"
               aria-label="Facebook"
             >
-              <Globe size={20} />
+              <FacebookIcon size={20} />
             </a>
             <a
               href={SOCIAL_LINKS.tiktok}
