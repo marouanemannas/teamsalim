@@ -51,7 +51,7 @@ export const programs: Program[] = [
     ],
     href: "/personal-training",
     gallery: true,
-    image: nottebiancaImage("WhatsApp Image 2026-06-25 at 12.48.47 (1).jpeg"),
+    image: nottebiancaImage("26.jpeg"),
   },
   {
     id: "allenamenti-gruppo",
@@ -63,6 +63,6 @@ export const programs: Program[] = [
     ],
     href: "/allenamenti-di-gruppo",
     gallery: true,
-    image: nottebiancaImage("WhatsApp Image 2026-06-25 at 12.48.49.jpeg"),
+    image: nottebiancaImage("32.jpeg"),
   },
 ];

@@ -27,7 +27,7 @@ export const disciplines: Discipline[] = [
     ],
     href: "/mma",
     icon: "swords",
-    image: nottebiancaImage("WhatsApp Image 2026-06-25 at 13.14.44.jpeg"),
+    image: nottebiancaImage("349.jpeg"),
   },
   {
     id: "muay-thai",
@@ -43,7 +43,7 @@ export const disciplines: Discipline[] = [
     ],
     href: "/muay-thai",
     icon: "flame",
-    image: nottebiancaImage("WhatsApp Image 2026-06-25 at 22.08.27 (1).jpeg"),
+    image: nottebiancaImage("451.jpeg"),
   },
   {
     id: "k-1",
@@ -59,7 +59,7 @@ export const disciplines: Discipline[] = [
     ],
     href: "/k1",
     icon: "zap",
-    image: nottebiancaImage("WhatsApp Image 2026-06-25 at 12.48.41.jpeg"),
+    image: nottebiancaImage("2.jpeg"),
   },
   {
     id: "kickboxing",
@@ -75,6 +75,6 @@ export const disciplines: Discipline[] = [
     ],
     href: "/kickboxing",
     icon: "hand",
-    image: nottebiancaImage("WhatsApp Image 2026-06-25 at 12.48.44 (2).jpeg"),
+    image: nottebiancaImage("16.jpeg"),
   },
 ];

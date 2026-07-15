@@ -4,9 +4,7 @@ import { SectionReveal } from "@/components/ui/SectionReveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { nottebiancaImage } from "@/lib/nottebianca";
 
-const PORTRAIT_IMAGE = nottebiancaImage(
-  "WhatsApp Image 2026-06-25 at 22.10.13.jpeg",
-);
+const PORTRAIT_IMAGE = nottebiancaImage("485.jpeg");
 
 export function Story() {
   return (
