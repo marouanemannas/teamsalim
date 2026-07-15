@@ -10,7 +10,7 @@ const SITE_URL = "https://teamsalim.com";
 function getWelcomeEmailHtml() {
   return `
     <div style="font-family: Arial, Helvetica, sans-serif; max-width: 480px; margin: 0 auto; color: #111;">
-      <h1 style="font-size: 20px;">Benvenuto/a in Team Salim! 🥋</h1>
+      <h1 style="font-size: 20px;">Ciao, benvenuto/a! Grazie per esserti iscritto/a alla newsletter di Team Salim.</h1>
       <p>Ciao,</p>
       <p>grazie per esserti iscritto/a alla newsletter di Team Salim! Da oggi sarai il/la primo/a a sapere di eventi, novità e aggiornamenti dalla palestra.</p>
       <p>Ti aspettiamo in ${GYM_ADDRESS} — MMA, Muay Thai, K-1 e Kickboxing, per ogni livello.</p>
