@@ -1,8 +1,9 @@
 import Image from "next/image";
 import { MapPin, Share2 } from "lucide-react";
 import { Container } from "@/components/ui/Container";
-import { FacebookIcon, InstagramIcon } from "@/components/icons/SocialIcons";
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "@/components/icons/SocialIcons";
 import { GOOGLE_MAPS_LINK, GYM_ADDRESS, SOCIAL_LINKS } from "@/lib/constants";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 export function Footer() {
   return (
@@ -63,6 +64,15 @@ export function Footer() {
               aria-label="TikTok"
             >
               <Share2 size={20} />
+            </a>
+            <a
+              href={getWhatsAppLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-foreground-muted transition-all duration-300 hover:scale-110 hover:text-accent-glow"
+              aria-label="WhatsApp"
+            >
+              <WhatsAppIcon size={20} />
             </a>
           </div>
         </div>
