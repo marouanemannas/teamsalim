@@ -65,11 +65,13 @@ export function Newsletter() {
           >
             <input
               type="email"
+              autoComplete="email"
               required
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="La tua email"
               disabled={status === "loading"}
+              suppressHydrationWarning
               className="w-full flex-1 rounded-full border border-white/15 bg-transparent px-5 py-3 text-sm text-foreground placeholder:text-foreground-muted focus:border-accent focus:outline-none disabled:opacity-60"
             />
             <button
