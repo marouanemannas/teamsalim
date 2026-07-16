@@ -82,6 +82,17 @@ export function Footer() {
         <p className="text-center text-xs text-foreground-muted">
           © {new Date().getFullYear()} Team Salim. Tutti i diritti riservati.
         </p>
+        <p className="mt-2 text-center text-[10px] text-foreground-muted/50">
+          Designed by{" "}
+          <a
+            href="https://www.instagram.com/_iam.marouane/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="underline decoration-transparent underline-offset-2 transition-colors duration-300 hover:text-accent-glow hover:decoration-accent-glow"
+          >
+            Marouane
+          </a>
+        </p>
       </Container>
     </footer>
   );
